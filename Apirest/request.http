@@ -1,0 +1,27 @@
+GET http://localhost:3000/libros HTTP/1.1
+
+###
+GET http://localhost:3000/libros/1 HTTP/1.1
+
+###
+POST http://localhost:3000/crear HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Memorias de las putas tristes",
+    "autor": "GABO",
+    "year": "1985"
+}
+
+###
+
+PUT http://localhost:3000/actualizar/4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Sí, si es contigo"
+}
+
+###
+
+DELETE http://localhost:3000/eliminar/3 HTTP/1.1
