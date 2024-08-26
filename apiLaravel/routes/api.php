@@ -14,9 +14,7 @@ Route::get('/usuarios/{id}', function (Request $request) {
     return "Consultando un solo usario";
 });
 
-Route::post('/usuarios', function (Request $request) {
-    return "Creando usuarios";
-});
+Route::post('/user', [contactosController::class,'store']);
 
 Route::put('/usuarios/{id}', function (Request $request) {
     return "Actualizando usuarios";
