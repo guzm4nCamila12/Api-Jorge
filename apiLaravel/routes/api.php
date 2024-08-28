@@ -6,20 +6,16 @@ use App\Http\Controllers\contactosController;
 
 Route::get('/user', [contactosController::class, 'index']);
 
-Route::get('/usuarios', function (Request $request) {
-    return "Bienvenidos a mi API REST en LARAVEL 11";
-});
-
-Route::get('/usuarios/{id}', function (Request $request) {
-    return "Consultando un solo usario";
-});
-
 Route::post('/user', [contactosController::class,'store']);
 
-Route::put('/usuarios/{id}', function (Request $request) {
-    return "Actualizando usuarios";
-});
+Route::get('/usuarios/{id}', [contactosController::class,'show']);
 
-Route::delete('/usuarios/{id}', function (Request $request) {
-    return "Borrando usuarios";
+Route::delete('/usuarios/{id}', [contactosController::class, 'eliminar']);
+
+Route::put('/usuarios/{id}', [contactosController::class, 'actualizar']);
+
+Route::patch('/usuarios/{id}', [contactosController::class, 'actualizarCampo']);
+
+Route::get('/usuarios', function (Request $request) {
+    return "Bienvenidos a mi API REST en LARAVEL 11";
 });
